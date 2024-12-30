@@ -395,27 +395,42 @@
         </div>
     </section>
     <!--SKILLS -->
-  <!-- Elemen Audio -->
- <audio id="backgroundMusic" autoplay loop>
-  <source src="audio/Gracie Abrams - That’s So True (Lyrics).mp3" type="audio/mpeg"> <!-- Pilihan 1 -->
-  <!-- Anda bisa mengganti src dengan lagu lain -->
-  Your browser does not support the audio element.
-</audio>
+ <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+        button {
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Play Music</h1>
+    <p>Pilih lagu yang ingin diputar:</p>
 
-<script>
-  const music = document.getElementById('backgroundMusic');
+    <!-- Tombol untuk memilih lagu -->
+    <button onclick="playMusic('audio/Gracie Abrams - That’s So True (Lyrics).mp3')">That's So true</button>
+    <button onclick="playMusic('audio/nina---feast-viral-tiktok.mp3')">lebih baik</button>
+    <button onclick="playMusic('audio/night-owl.mp3')">Play Night Owl</button>
 
-  // Memastikan musik autoplay
-  window.addEventListener('load', () => {
-      music.play().catch(() => {
-          console.warn('Autoplay gagal. Mencoba tanpa suara...');
-          music.muted = true;
-          music.play().then(() => {
-              music.muted = false;
-          });
-      });
-  });
-</script>
+    <!-- Elemen Audio -->
+    <audio id="musicPlayer" controls style="margin-top: 20px;">
+        Your browser does not support the audio element.
+    </audio>
+
+    <script>
+        // Fungsi untuk memutar lagu
+        function playMusic(song) {
+            const musicPlayer = document.getElementById('musicPlayer');
+            musicPlayer.src = song; // Ganti sumber lagu
+            musicPlayer.play();    // Mulai memutar lagu
+        }
+    </script>
     <!-- Projects Section -->
     <section id="projects">
         <section class="project-section" id="project">
