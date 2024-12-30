@@ -332,7 +332,26 @@
 
     <script src="script.js"></script>
 
+    <p>Pilih lagu yang ingin diputar:</p>
 
+    <!-- Tombol untuk memilih lagu -->
+    <button onclick="playMusic('audio/Gracie Abrams - That’s So True (Lyrics).mp3')">That's So true</button>
+    <button onclick="playMusic('audio/nina---feast-viral-tiktok.mp3')">lebih baik</button>
+    <button onclick="playMusic('audio/night-owl.mp3')">Play Night Owl</button>
+
+    <!-- Elemen Audio -->
+    <audio id="musicPlayer" controls style="margin-top: 20px;">
+        Your browser does not support the audio element.
+    </audio>
+
+    <script>
+        // Fungsi untuk memutar lagu
+        function playMusic(song) {
+            const musicPlayer = document.getElementById('musicPlayer');
+            musicPlayer.src = song; // Ganti sumber lagu
+            musicPlayer.play();    // Mulai memutar lagu
+        }
+    </script>
 
     <!-- Passionate Section -->
     <section id="about">
@@ -411,26 +430,7 @@
 </head>
 <body>
     <h1>Play Music</h1>
-    <p>Pilih lagu yang ingin diputar:</p>
 
-    <!-- Tombol untuk memilih lagu -->
-    <button onclick="playMusic('audio/Gracie Abrams - That’s So True (Lyrics).mp3')">That's So true</button>
-    <button onclick="playMusic('audio/nina---feast-viral-tiktok.mp3')">lebih baik</button>
-    <button onclick="playMusic('audio/night-owl.mp3')">Play Night Owl</button>
-
-    <!-- Elemen Audio -->
-    <audio id="musicPlayer" controls style="margin-top: 20px;">
-        Your browser does not support the audio element.
-    </audio>
-
-    <script>
-        // Fungsi untuk memutar lagu
-        function playMusic(song) {
-            const musicPlayer = document.getElementById('musicPlayer');
-            musicPlayer.src = song; // Ganti sumber lagu
-            musicPlayer.play();    // Mulai memutar lagu
-        }
-    </script>
     <!-- Projects Section -->
     <section id="projects">
         <section class="project-section" id="project">
