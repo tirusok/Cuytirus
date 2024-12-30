@@ -395,10 +395,22 @@
         </div>
     </section>
     <!--SKILLS -->
-<audio autoplay>
-        <source src="./nina---feast-viral-tiktok.mp3" type="audio/mp3">
+   <audio id="backgroundMusic" autoplay>
+        <source src="nina---feast-viral-tiktok.mp3" type="audio/mp3">
         Your browser does not support the audio element.
     </audio>
+    <script>
+        // Memastikan autoplay bekerja di perangkat
+        const music = document.getElementById('backgroundMusic');
+
+        // Coba putar audio
+        music.play().catch(() => {
+            // Jika gagal (misalnya karena kebijakan browser), tunggu interaksi pengguna
+            document.body.addEventListener('click', () => {
+                music.play();
+            }, { once: true }); // Hanya perlu satu kali interaksi
+        });
+    </script>
     <!-- Projects Section -->
     <section id="projects">
         <section class="project-section" id="project">
@@ -455,7 +467,7 @@
                       </div>
                   </div>
                   <div class="project-card">
-                    <img src="./img/proto/p6.jpg" alt="Desain Game Project" class="project-image">
+                    <img src="./img/proto/ptalent.jpg" alt="Desain Game Project" class="project-image">
                     <h2>web resto<span> Projek Talenthub</span></h2>
                     <p>Menjualkan berbagai menu nasgor dan mie ayam</p>
                     <div class="tech-stack">
