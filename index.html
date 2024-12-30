@@ -313,7 +313,7 @@
     <header>
         <nav class="navbar">
             <div class="logo">
-                <a href="#">MyPortfolio</a>
+                <a href="#">Anarus cuy</a>
             </div>
             <ul class="nav-links">
                 <li><a href="#about">About Me</a></li>
@@ -395,20 +395,25 @@
         </div>
     </section>
     <!--SKILLS -->
-   <audio id="backgroundMusic" autoplay>
-        <source src="nina---feast-viral-tiktok.mp3" type="audio/mp3">
+    <audio id="backgroundMusic" autoplay>
+        <source src="nina---feast-viral-tiktok.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
     <script>
-        // Memastikan autoplay bekerja di perangkat
+        // Ambil elemen audio
         const music = document.getElementById('backgroundMusic');
 
-        // Coba putar audio
-        music.play().catch(() => {
-            // Jika gagal (misalnya karena kebijakan browser), tunggu interaksi pengguna
-            document.body.addEventListener('click', () => {
-                music.play();
-            }, { once: true }); // Hanya perlu satu kali interaksi
+        // Coba memutar audio setelah halaman dimuat
+        window.addEventListener('load', () => {
+            music.play().catch(() => {
+                console.warn('Autoplay gagal, mencoba tanpa suara...');
+                // Coba play tanpa suara (jika autoplay diblokir)
+                music.muted = true;
+                music.play().then(() => {
+                    // Setelah berhasil play, suara bisa dihidupkan
+                    music.muted = false;
+                });
+            });
         });
     </script>
     <!-- Projects Section -->
