@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Naruto sebagai Background</title>
+    <style>
+        /* Menghilangkan margin dan padding default */
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+
+        /* Style video yang menjadi background di header */
+        #video-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Membuat video memenuhi seluruh area */
+            z-index: -1; /* Agar video berada di belakang konten lain */
+        }
+
+        /* Style untuk bagian header yang menyatu dengan navbar */
+        header {
+            position: relative;
+            z-index: 1;
+            height: 100vh; /* Mengatur tinggi header sesuai dengan tinggi layar */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 36px;
+            text-align: center;
+        }
+
+        /* Style untuk navbar */
+        nav {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 10px 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            text-align: center;
+            z-index: 2;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 18px;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        /* Style tombol Enable Audio */
+        #unmute-button {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1000;
+            padding: 10px 20px;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        #unmute-button:hover {
+            background-color: rgba(0, 0, 0, 0.9);
+        }
+
+        /* Hack gif sebagai background */
+        #hack-gif {
+            width: 100%;
+            height: 50px; /* Atur tinggi gif sesuai kebutuhan */
+            background: url('hack.gif') no-repeat center center;
+            background-size: contain;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Video Naruto sebagai background -->
+    <video id="video-background" autoplay loop muted>
+        <source src="naruto.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <!-- Navbar -->
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+    </nav>
+
+    <!-- Header dengan tombol Enable Audio -->
+    <header>
+        <h1>Selamat datang di dunia Naruto!</h1>
+        <button id="unmute-button">Enable Audio</button>
+    </header>
+
+   
+
+    <script>
+        const button = document.getElementById('unmute-button');
+        const video = document.getElementById('video-background');
+
+        // Enable audio for the video when the button is clicked
+        button.addEventListener('click', () => {
+            video.muted = false;  // Menonaktifkan mode mute pada video
+            button.style.display = 'none';  // Menyembunyikan tombol setelah audio diaktifkan
+        });
+    </script>
+</body>
+</html>
