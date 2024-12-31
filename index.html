@@ -25,7 +25,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: url('./hack.gif') no-repeat center center fixed;
+            background: url('/hack.gif') no-repeat center center fixed;
             background-size: cover;
             z-index: -1;
         }
@@ -313,7 +313,7 @@
     <header>
         <nav class="navbar">
             <div class="logo">
-                <a href="#">Anarus cuy</a>
+                <a href="#">MyPortfolio</a>
             </div>
             <ul class="nav-links">
                 <li><a href="#about">About Me</a></li>
@@ -331,34 +331,35 @@
  
 
     <script src="script.js"></script>
+ <!-- Elemen Audio -->
+ <audio id="backgroundMusic" autoplay loop>
+  <source src="audio/Gracie Abrams - That’s So True (Lyrics).mp3" type="audio/mpeg"> <!-- Pilihan 1 -->
+  <!-- Anda bisa mengganti src dengan lagu lain -->
+  Your browser does not support the audio element.
+</audio>
 
-    <p>Pilih lagu yang ingin diputar:</p>
+<script>
+  const music = document.getElementById('backgroundMusic');
 
-    <!-- Tombol untuk memilih lagu -->
-    <button onclick="playMusic('audio/Gracie Abrams - That’s So True (Lyrics).mp3')">That's So true</button>
-    <button onclick="playMusic('audio/nina---feast-viral-tiktok.mp3')">lebih baik</button>
-    <button onclick="playMusic('audio/night-owl.mp3')">Play Night Owl</button>
+  // Memastikan musik autoplay
+  window.addEventListener('load', () => {
+      music.play().catch(() => {
+          console.warn('Autoplay gagal. Mencoba tanpa suara...');
+          music.muted = true;
+          music.play().then(() => {
+              music.muted = false;
+          });
+      });
+  });
+</script>
 
-    <!-- Elemen Audio -->
-    <audio id="musicPlayer" controls style="margin-top: 20px;">
-        Your browser does not support the audio element.
-    </audio>
-
-    <script>
-        // Fungsi untuk memutar lagu
-        function playMusic(song) {
-            const musicPlayer = document.getElementById('musicPlayer');
-            musicPlayer.src = song; // Ganti sumber lagu
-            musicPlayer.play();    // Mulai memutar lagu
-        }
-    </script>
 
     <!-- Passionate Section -->
     <section id="about">
     <div class="passionate-section">
         <div class="passionate-card">
             <div class="d-flex align-items-center mb-3">
-                <img src="./tirus1.jpg" alt="Profile picture of a person">
+                <img src="/tirus1.jpg" alt="Profile picture of a person">
                 <div class="ms-2">
                     <p class="mb-0">Hi, I'm Ahmad Naufal Tirus.</p>
                     <p class="mb-0 text-muted">Frontend Developer</p>
@@ -414,22 +415,6 @@
         </div>
     </section>
     <!--SKILLS -->
- <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            padding: 20px;
-        }
-        button {
-            margin: 10px;
-            padding: 10px 20px;
-            font-size: 16px;
-            cursor: pointer;
-        }
-    </style>
-</head>
-<body>
-    <h1>Play Music</h1>
 
     <!-- Projects Section -->
     <section id="projects">
@@ -438,7 +423,7 @@
             <div class="container mx-auto p-4">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div class="project-card">
-                        <img src="./img/proto/p1.png" alt="Desain Web Project" class="project-image">
+                        <img src="/img/proto/p1.png" alt="Desain Web Project" class="project-image">
                         <h2>Web edupioner<span> Projek lomba</span></h2>
                         <p>Membuat website untuk menyediakan info lomba,volunteer, beasiswa,pertukaran pelajar</p>
                         <div class="tech-stack">
@@ -458,7 +443,7 @@
                         </div>
                     </div>
                     <div class="project-card">
-                        <img src="./img/proto/p3.png" alt="Desain Pengalaman Pengguna Project" class="project-image">
+                        <img src="/img/proto/p3.png" alt="Desain Pengalaman Pengguna Project" class="project-image">
                         <h2>Prototype<span>Projek lomba</span></h2>
                         <p>Ui/UX Tentang "Aplikasi Terintegrasi untuk Pengelolaan Sampah Organik dan Penyediaan Kemasa Ramah Lingkungan di Indonesia"</p>
                         <div class="tech-stack">
@@ -466,7 +451,7 @@
                         </div>
                     </div>
                     <div class="project-card">
-                        <img src="./img/proto/p4.png" alt="Desain Game Project" class="project-image">
+                        <img src="/img/proto/p4.png" alt="Desain Game Project" class="project-image">
                         <h2><span>Projek lomba</span></h2>
                         <p>Implementasi User Experience Design dalam 
                           Pengembangan Aplikasi YukKnabung sebagai Solusi 
@@ -477,7 +462,7 @@
                         </div>
                     </div>
                     <div class="project-card">
-                      <img src="./img/proto/p5 (2).png" alt="Desain Game Project" class="project-image">
+                      <img src="/img/proto/p5 (2).png" alt="Desain Game Project" class="project-image">
                       <h2>UI/UX<span> Projek lomba</span></h2>
                       <p>"CropDoctor: AI-Based Plant Disease Diagnosis Application with 
                         Solution Recommendations and User-Friendly Interface for Modern 
@@ -487,7 +472,7 @@
                       </div>
                   </div>
                   <div class="project-card">
-                    <img src="./img/proto/ptalent.jpg" alt="Desain Game Project" class="project-image">
+                    <img src="/img/proto/p6.jpg" alt="Desain Game Project" class="project-image">
                     <h2>web resto<span> Projek Talenthub</span></h2>
                     <p>Menjualkan berbagai menu nasgor dan mie ayam</p>
                     <div class="tech-stack">
@@ -495,7 +480,7 @@
                     </div>
                 </div>
                 <div class="project-card">
-                  <img src="./img/proto/p7.jpg" alt="Desain Game Project" class="project-image">
+                  <img src="/img/proto/p7.jpg" alt="Desain Game Project" class="project-image">
                   <h2>Projek Matkul<span> Konfigurasi Jaringan internet</span></h2>
                   <p>Menggunakan Routing dinamis</p>
                   <div class="tech-stack">
@@ -514,7 +499,7 @@
         <div class="container mx-auto py-8">
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
               <div class="bg-white shadow-md rounded-lg overflow-hidden">
-                <img alt="Certificate 1" class="w-full h-48 object-cover cursor-pointer" onclick="openModal('modal1')" src="./img/1s.png"/>
+                <img alt="Certificate 1" class="w-full h-48 object-cover cursor-pointer" onclick="openModal('modal1')" src="/img/1s.png"/>
                 <div class="p-4">
                   <h2 class="text-lg font-semibold">
                     Certificate of Participation
@@ -524,7 +509,7 @@
                 </div>
               </div>
               <div class="bg-white shadow-md rounded-lg overflow-hidden">
-                <img alt="Certificate 2" class="w-full h-48 object-cover cursor-pointer" onclick="openModal('modal2')" src="./img/2s.png"/>
+                <img alt="Certificate 2" class="w-full h-48 object-cover cursor-pointer" onclick="openModal('modal2')" src="/img/2s.png"/>
                 <div class="p-4">
                   <h2 class="text-lg font-semibold">
                     Certificate of Excellence
@@ -535,7 +520,7 @@
                 </div>
               </div>
               <div class="bg-white shadow-md rounded-lg overflow-hidden">
-                <img alt="Certificate 3" class="w-full h-48 object-cover cursor-pointer" onclick="openModal('modal3')" src="./img/3s.png"/>
+                <img alt="Certificate 3" class="w-full h-48 object-cover cursor-pointer" onclick="openModal('modal3')" src="/img/3s.png"/>
                 <div class="p-4">
                   <h2 class="text-lg font-semibold">
                     Certificate of Participation
@@ -546,7 +531,7 @@
                 </div>
               </div>
               <div class="bg-white shadow-md rounded-lg overflow-hidden">
-                <img alt="Certificate 4" class="w-full h-48 object-cover cursor-pointer" onclick="openModal('modal4')" src="./img/4s.png"/>
+                <img alt="Certificate 4" class="w-full h-48 object-cover cursor-pointer" onclick="openModal('modal4')" src="/img/4s.png"/>
                 <div class="p-4">
                   <h2 class="text-lg font-semibold">
                     Certificate of Achievement
@@ -557,7 +542,7 @@
                 </div>
               </div>
               <div class="bg-white shadow-md rounded-lg overflow-hidden">
-                <img alt="Certificate 5" class="w-full h-48 object-cover cursor-pointer" onclick="openModal('modal5')" src="./img/5s.png"/>
+                <img alt="Certificate 5" class="w-full h-48 object-cover cursor-pointer" onclick="openModal('modal5')" src="/img/5s.png"/>
                 <div class="p-4">
                   <h2 class="text-lg font-semibold">
                     Certificate of Achievement
@@ -568,7 +553,7 @@
                 </div>
               </div>
               <div class="bg-white shadow-md rounded-lg overflow-hidden">
-                <img alt="Certificate 6" class="w-full h-48 object-cover cursor-pointer" onclick="openModal('modal6')" src="./img/6s.png"/>
+                <img alt="Certificate 6" class="w-full h-48 object-cover cursor-pointer" onclick="openModal('modal6')" src="/img/6s.png"/>
                 <div class="p-4">
                   <h2 class="text-lg font-semibold">
                     Certificate of Achievement
@@ -579,7 +564,7 @@
                 </div>
               </div>
               <div class="bg-white shadow-md rounded-lg overflow-hidden">
-                <img alt="Certificate 7" class="w-full h-48 object-cover cursor-pointer" onclick="openModal('modal7')" src="./img/8.png"/>
+                <img alt="Certificate 7" class="w-full h-48 object-cover cursor-pointer" onclick="openModal('modal7')" src="/img/8.png"/>
                 <div class="p-4">
                   <h2 class="text-lg font-semibold">
                     Certificate of Achievement
@@ -590,7 +575,7 @@
                 </div>
               </div>
               <div class="bg-white shadow-md rounded-lg overflow-hidden">
-                <img alt="Certificate 8" class="w-full h-48 object-cover cursor-pointer" onclick="openModal('modal8')" src="./img/8s.png"/>
+                <img alt="Certificate 8" class="w-full h-48 object-cover cursor-pointer" onclick="openModal('modal8')" src="/img/8s.png"/>
                 <div class="p-4">
                   <h2 class="text-lg font-semibold">
                     Certificate of Achievement
@@ -600,7 +585,7 @@
                 </div>
               </div>
               <div class="bg-white shadow-md rounded-lg overflow-hidden">
-                <img alt="Certificate 9" class="w-full h-48 object-cover cursor-pointer" onclick="openModal('modal9')" src="./img/Juara kuy.png"/>
+                <img alt="Certificate 9" class="w-full h-48 object-cover cursor-pointer" onclick="openModal('modal9')" src="/img/Juara kuy.png"/>
                 <div class="p-4">
                   <h2 class="text-lg font-semibold">
                     Certificate of Achievement
@@ -611,7 +596,7 @@
                 </div>
               </div>
               <div class="bg-white shadow-md rounded-lg overflow-hidden">
-                <img alt="Certificate 10" class="w-full h-48 object-cover cursor-pointer" onclick="openModal('modal10')" src="./img/sertif ecs.png"/>
+                <img alt="Certificate 10" class="w-full h-48 object-cover cursor-pointer" onclick="openModal('modal10')" src="/img/sertif ecs.png"/>
                 <div class="p-4">
                   <h2 class="text-lg font-semibold">
                     Certificate of Achievement
@@ -628,61 +613,61 @@
           <div id="modal1" class="modal">
             <div class="modal-content">
               <span class="close" onclick="closeModal('modal1')">&times;</span>
-              <img src="./img/1s.png" alt="Certificate 1">
+              <img src="/img/1s.png" alt="Certificate 1">
             </div>
           </div>
           <div id="modal2" class="modal">
             <div class="modal-content">
               <span class="close" onclick="closeModal('modal2')">&times;</span>
-              <img src="./img/2s.png" alt="Certificate 2">
+              <img src="/img/2s.png" alt="Certificate 2">
             </div>
           </div>
           <div id="modal3" class="modal">
             <div class="modal-content">
               <span class="close" onclick="closeModal('modal3')">&times;</span>
-              <img src="./img/3s.png" alt="Certificate 3">
+              <img src="/img/3s.png" alt="Certificate 3">
             </div>
           </div>
           <div id="modal4" class="modal">
             <div class="modal-content">
               <span class="close" onclick="closeModal('modal4')">&times;</span>
-              <img src="./img/4s.png" alt="Certificate 4">
+              <img src="/img/4s.png" alt="Certificate 4">
             </div>
           </div>
           <div id="modal5" class="modal">
             <div class="modal-content">
               <span class="close" onclick="closeModal('modal5')">&times;</span>
-              <img src="./img/5s.png" alt="Certificate 5">
+              <img src="/img/5s.png" alt="Certificate 5">
             </div>
           </div>
           <div id="modal6" class="modal">
             <div class="modal-content">
               <span class="close" onclick="closeModal('modal6')">&times;</span>
-              <img src="./img/6s.png" alt="Certificate 6">
+              <img src="/img/6s.png" alt="Certificate 6">
             </div>
           </div>
           <div id="modal7" class="modal">
             <div class="modal-content">
               <span class="close" onclick="closeModal('modal7')">&times;</span>
-              <img src="./img/8.png" alt="Certificate 7">
+              <img src="/img/8.png" alt="Certificate 7">
             </div>
           </div>
           <div id="modal8" class="modal">
             <div class="modal-content">
               <span class="close" onclick="closeModal('modal8')">&times;</span>
-              <img src="./img/8s.png" alt="Certificate 8">
+              <img src="/img/8s.png" alt="Certificate 8">
             </div>
           </div>
           <div id="modal9" class="modal">
             <div class="modal-content">
               <span class="close" onclick="closeModal('modal9')">&times;</span>
-              <img src="./img/Juara kuy.png" alt="Certificate 9">
+              <img src="/img/Juara kuy.png" alt="Certificate 9">
             </div>
           </div>
           <div id="modal10" class="modal">
             <div class="modal-content">
               <span class="close" onclick="closeModal('modal10')">&times;</span>
-              <img src="./img/sertif ecs.png" alt="Certificate 10">
+              <img src="/img/sertif ecs.png" alt="Certificate 10">
             </div>
           </div>
         
@@ -705,7 +690,7 @@
                         </h1>
                         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8">
                         <div class="bg-white rounded-lg overflow-hidden">
-                        <img alt="Portrait 1" class="w-full h-64 object-cover" height="300" src="./img/g/g1.JPG" width="300"/>
+                        <img alt="Portrait 1" class="w-full h-64 object-cover" height="300" src="/img/g/g1.JPG" width="300"/>
                         <div class="bg-[#C4FF00] p-4">
                             <h2 class="text-black text-lg font-bold">
                             Google developer ITS
@@ -716,7 +701,7 @@
                         </div>
                         </div>
                         <div class="bg-white rounded-lg overflow-hidden">
-                        <img alt="Portrait 2" class="w-full h-64 object-cover" height="300" src="./img/g/g2.JPG" width="300"/>
+                        <img alt="Portrait 2" class="w-full h-64 object-cover" height="300" src="/img/g/g2.JPG" width="300"/>
                         <div class="bg-[#C4FF00] p-4">
                             <h2 class="text-black text-lg font-bold">
                               Google developer ITS
@@ -727,7 +712,7 @@
                         </div>
                         </div>
                         <div class="bg-white rounded-lg overflow-hidden">
-                        <img alt="Portrait 3" class="w-full h-64 object-cover" height="300" src="./img/g/gg.jpg" width="300"/>
+                        <img alt="Portrait 3" class="w-full h-64 object-cover" height="300" src="/img/g/gg.jpg" width="300"/>
                         <div class="bg-[#C4FF00] p-4">
                             <h2 class="text-black text-lg font-bold">
                          Jatim Developer Day
@@ -738,7 +723,7 @@
                         </div>
                         </div>
                         <div class="bg-white rounded-lg overflow-hidden">
-                        <img alt="Portrait 4" class="w-full h-64 object-cover" height="300" src="./img/g/WhatsApp Image 2024-12-29 at 14.42.31_deb760e8.jpg" width="300"/>
+                        <img alt="Portrait 4" class="w-full h-64 object-cover" height="300" src="/img/g/WhatsApp Image 2024-12-29 at 14.42.31_deb760e8.jpg" width="300"/>
                         <div class="bg-[#C4FF00] p-4">
                             <h2 class="text-black text-lg font-bold">
                            Lagi Lsp cuy
@@ -749,7 +734,7 @@
                         </div>
                         </div>
                         <div class="bg-white rounded-lg overflow-hidden">
-                        <img alt="Portrait 5" class="w-full h-64 object-cover" height="300" src="./img/g/WhatsApp Image 2024-12-29 at 14.42.43_b957cc51.jpg" width="300"/>
+                        <img alt="Portrait 5" class="w-full h-64 object-cover" height="300" src="/img/g/WhatsApp Image 2024-12-29 at 14.42.43_b957cc51.jpg" width="300"/>
                         <div class="bg-[#C4FF00] p-4">
                             <h2 class="text-black text-lg font-bold">
                         fotbar bersama orang penting smeas
@@ -760,7 +745,7 @@
                         </div>
                         </div>
                         <div class="bg-white rounded-lg overflow-hidden">
-                        <img alt="Portrait 6" class="w-full h-64 object-cover" height="300" src="./img/g/WhatsApp Image 2024-12-29 at 14.42.45_92ae9cee.jpg" width="300"/>
+                        <img alt="Portrait 6" class="w-full h-64 object-cover" height="300" src="/img/g/WhatsApp Image 2024-12-29 at 14.42.45_92ae9cee.jpg" width="300"/>
                         <div class="bg-[#C4FF00] p-4">
                             <h2 class="text-black text-lg font-bold">
                             Grand final Cakning vokasi 
@@ -771,7 +756,7 @@
                         </div>
                         </div>
                         <div class="bg-white rounded-lg overflow-hidden">
-                        <img alt="Portrait 7" class="w-full h-64 object-cover" height="300" src="./img/g/WhatsApp Image 2024-12-29 at 14.42.46_c91cdbfd.jpg" width="900"/>
+                        <img alt="Portrait 7" class="w-full h-64 object-cover" height="300" src="img/g/WhatsApp Image 2024-12-29 at 14.42.46_c91cdbfd.jpg" width="900"/>
                         <div class="bg-[#C4FF00] p-4">
                             <h2 class="text-black text-lg font-bold">
                         Lagi kumpul bersama anak teknik
@@ -782,7 +767,7 @@
                         </div>
                         </div>
                         <div class="bg-white rounded-lg overflow-hidden">
-                        <img alt="Portrait 8" class="w-full h-64 object-cover" height="300" src="./img/g/WhatsApp Image 2024-12-29 at 14.42.49_51e7d797.jpg" width="300"/>
+                        <img alt="Portrait 8" class="w-full h-64 object-cover" height="300" src="/img/g/WhatsApp Image 2024-12-29 at 14.42.49_51e7d797.jpg" width="300"/>
                         <div class="bg-[#C4FF00] p-4">
                             <h2 class="text-black text-lg font-bold">
                            Random wkwk
@@ -793,7 +778,7 @@
                         </div>
                         </div>
                         <div class="bg-white rounded-lg overflow-hidden">
-                        <img alt="Portrait 9" class="w-full h-64 object-cover" height="300" src="./img/g/WhatsApp Image 2024-12-29 at 14.42.50_dc57f54f.jpg" width="300"/>
+                        <img alt="Portrait 9" class="w-full h-64 object-cover" height="300" src="/img/g/WhatsApp Image 2024-12-29 at 14.42.50_dc57f54f.jpg" width="300"/>
                         <div class="bg-[#C4FF00] p-4">
                             <h2 class="text-black text-lg font-bold">
                               fotbar bersama sepuhh
