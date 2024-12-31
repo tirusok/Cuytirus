@@ -111,7 +111,7 @@ body {
 /* Skills Section with Background Image */
 .skill {
     padding: 3rem 0;
-    background-image: url('/bg1.jpeg'); /* Replace this with the actual image path */
+    background-image: url('./bg1.jpeg'); /* Replace this with the actual image path */
     background-size: cover;
     background-position: center;
     color: rgb(244, 244, 244);
